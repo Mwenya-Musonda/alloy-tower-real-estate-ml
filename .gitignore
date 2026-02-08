@@ -1,0 +1,25 @@
+ml/data/*.csv
+models/*.pkl
+.env
+__pycache__/
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environments
+sklearn-env/
+.venv/
+venv/
+
+# Data files (optional – good practice)
+ml/data/*.csv
+
+# Models
+models/*.pkl
+models/*.pk1
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
