@@ -6,9 +6,9 @@ import logging
 import pandas as pd
 import snowflake.connector
 
-# ────────────────────────────────────────────────
+
 #  CONFIGURATION
-# ────────────────────────────────────────────────
+
 
 SNOWFLAKE_CONFIG = {
     "user":     "ALLOY_TOWER_DS",
@@ -40,9 +40,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# ────────────────────────────────────────────────
-#  HELPERS
-# ────────────────────────────────────────────────
+
 
 def get_connection():
     """Create Snowflake connection"""
@@ -119,9 +117,9 @@ def save_dataframe(df: pd.DataFrame, table_name: str):
         logger.error(f"Failed to save {filename}: {e}")
 
 
-# ────────────────────────────────────────────────
+
 #  MAIN
-# ────────────────────────────────────────────────
+
 
 def main():
     conn = get_connection()
@@ -140,7 +138,7 @@ def main():
     conn.close()
 
     if extracted_count == len(TARGET_TABLES):
-        logger.info("✅ All tables extracted and saved successfully!")
+        logger.info(" All tables extracted and saved successfully!")
     else:
         logger.warning(f"Only {extracted_count}/{len(TARGET_TABLES)} tables were extracted.")
 
